@@ -7,7 +7,9 @@ parameters:
     database_name: blog
     database_user: root
     database_password: pass
-    phpcr_backend: { type: doctrinedbal, connection: default }
+    phpcr_backend:
+        type: doctrinedbal
+        connection: default
     phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: admin
@@ -16,5 +18,6 @@ parameters:
     mailer_user: null
     mailer_password: null
     locale: en
-    locales: [en]
+    locales:
+        - en
     secret: ChangeThisMotherFuckingNoSoSecretKeyPlease

@@ -3,10 +3,9 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
+class AppKernel extends Kernel {
+
+    public function registerBundles() {
         $bundles = array(
             // enable symfony-standard bundles
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
@@ -14,7 +13,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
@@ -22,7 +20,6 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Liip\ImagineBundle\LiipImagineBundle(),
-
             // enable cmf bundles
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
@@ -31,7 +28,6 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
-
             // and the sandbox bundle
             new Acme\MainBundle\AcmeMainBundle(),
         );
@@ -44,8 +40,8 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader)
-    {
-        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+    public function registerContainerConfiguration(LoaderInterface $loader) {
+        $loader->load(__DIR__ . '/config/config_' . $this->getEnvironment() . '.yml');
     }
+
 }
